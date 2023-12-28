@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 public class Regex {
     public static void main(String[] args) {
         Regex regex = new Regex();
-        String input = "roop.lala@gmail.com";
-        System.out.println("PATTERN MATCH:- " + regex.validEmail(input));
+        String input = "91 1234567890";
+        System.out.println("PATTERN MATCH:- " + regex.validMobile(input));
     }
 
     public boolean validFirstName(String input){
@@ -26,6 +26,13 @@ public class Regex {
 
     public boolean validEmail(String input){
         Pattern pattern = Pattern.compile("^[a-z]+([\\.][a-z]+)?@[a-z]+.[a-z]+([\\.][a-z]+)?$");
+        
+        Matcher matcher = pattern.matcher(input);
+        return matcher.matches();
+    }
+
+     public boolean validMobile(String input){
+        Pattern pattern = Pattern.compile("^[0-9]{2}\\s[0-9]{10}$");
         
         Matcher matcher = pattern.matcher(input);
         return matcher.matches();
