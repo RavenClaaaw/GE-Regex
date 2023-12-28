@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Regex {
     public static void main(String[] args) {
         Regex regex = new Regex();
-        String input = "12345678";
+        String input = "SamplePassword";
         System.out.println("PATTERN MATCH:- " + regex.validPassword(input));
     }
 
@@ -39,8 +39,8 @@ public class Regex {
     }
 
     public boolean validPassword(String input){
-        Pattern pattern = Pattern.compile("^[A-Za-z0-9]{8,}$");
-        
+        Pattern pattern = Pattern.compile("(?=\\w*[A-Z]\\w*)^\\w{8,}$");
+
         Matcher matcher = pattern.matcher(input);
         return matcher.matches();
     }
