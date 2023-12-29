@@ -39,7 +39,7 @@ public class Regex {
     }
 
     public boolean validPassword(String input){
-        Pattern pattern = Pattern.compile("(?=\\w*[A-Z]+\\w*)(?=\\w*[0-9]+\\w*)^\\w{8,}$");
+        Pattern pattern = Pattern.compile("(?=.*[A-Z])(?=.*[0-9])(?=.*[@#])^[A-Za-z0-9@#]{8,}$");
 
         Matcher matcher = pattern.matcher(input);
         return matcher.matches();
