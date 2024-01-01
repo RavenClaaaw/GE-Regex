@@ -6,12 +6,12 @@ import java.util.regex.Pattern;
 public class Regex {
     public static void main(String[] args) {
         Regex regex = new Regex();
-        String input = "#Sample123Password";
-        System.out.println("PATTERN MATCH:- " + regex.validPassword(input));
+        String input = "Roop";
+        System.out.println("PATTERN MATCH:- " + regex.validFirstName(input));
     }
 
     public boolean validFirstName(String input){
-        Pattern pattern = Pattern.compile("%[A-Z][\\w]{2,}$");
+        Pattern pattern = Pattern.compile("^[A-Z][\\w]{2,}$");
 
         Matcher matcher = pattern.matcher(input);
         return matcher.matches();
@@ -25,7 +25,7 @@ public class Regex {
     }
 
     public boolean validEmail(String input){
-        Pattern pattern = Pattern.compile("^[a-z]+([\\.][a-z]+)?@[a-z]+.[a-z]+([\\.][a-z]+)?$");
+        Pattern pattern = Pattern.compile("^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\\.[a-zA-Z]{2,}){1,2}$");
         
         Matcher matcher = pattern.matcher(input);
         return matcher.matches();
